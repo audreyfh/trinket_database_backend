@@ -23,7 +23,7 @@ let trinkets = [
         "rating": "★★★★★",
         "ranking_id": 1,
         "categories": [
-            "junk",
+            "Junk",
             "weird",
             "home",
             "example"
@@ -42,8 +42,8 @@ let trinkets = [
         "rating": "★★★★☆",
         "ranking_id": 2,
         "categories": [
-            "cute",
-            "collectible",
+            "Cute",
+            "Collectible",
             "example"
         ],
         "extraparam": "null"
@@ -62,7 +62,7 @@ let trinkets = [
         "categories": [
             "home",
             "new",
-            "misc.",
+            "Misc",
             "example"
         ],
         "extraparam": "Newest Trinket"
@@ -96,7 +96,7 @@ let trinkets = [
         "rating": "",
         "ranking_id": 5,
         "categories": [
-            "vintage"
+            "Vintage"
         ],
         "extraparam": "null"
     },
@@ -159,7 +159,7 @@ let trinkets = [
         "rating": "",
         "ranking_id": 6,
         "categories": [
-            "doll"
+            "Doll"
         ],
         "extraparam": "null"
     },
@@ -174,7 +174,7 @@ let trinkets = [
         "rating": "",
         "ranking_id": 7,
         "categories": [
-            "collectible"
+            "Collectible"
         ],
         "extraparam": "null"
     },
@@ -189,8 +189,8 @@ let trinkets = [
         "rating": "",
         "ranking_id": 8,
         "categories": [
-            "animal",
-            "collectible"
+            "Animal",
+            "Collectible"
         ],
         "extraparam": "null"
     },
@@ -205,8 +205,8 @@ let trinkets = [
         "rating": "",
         "ranking_id": 9,
         "categories": [
-            "collectible",
-            "foreign"
+            "Collectible",
+            "Foreign"
         ],
         "extraparam": "null"
     },
@@ -221,8 +221,8 @@ let trinkets = [
         "rating": "",
         "ranking_id": 10,
         "categories": [
-            "foreign",
-            "cute"
+            "Foreign",
+            "Cute"
         ],
         "extraparam": "null"
     },
@@ -237,7 +237,7 @@ let trinkets = [
         "rating": "",
         "ranking_id": 11,
         "categories": [
-            "misc."
+            "Misc"
         ],
         "extraparam": "null"
     }
