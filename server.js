@@ -108,8 +108,8 @@ let trinkets = [
         "year": "N/A",
         "value": "$50.00-$200.00+",
         "origin": "N/A",
-        "description":"Blythe is a line of fashion dolls which were originally sold in 1972 in the U.S., U.K., Australia, and Japan. While the dolls never enjoyed large mainstream success, they have since developed a cult following. Today, most blythe doll collectors seek out custom dolls made by individual sellers, or even choose to customize their own doll using knock-off/replica parts.<br> <strong>Why I want it:</strong> While many find Blythe dolls creepy, I think they're super cute and endearing, and would particularly like to make a \"mini-me\" blythe doll to display in my room.",
-        "rating": "none",
+        "description":"Blythe is a line of fashion dolls which were originally sold in 1972 in the U.S., U.K., Australia, and Japan. While the dolls never enjoyed large mainstream success, they have since developed a cult following. Today, most blythe doll collectors seek out custom dolls made by individual sellers, or even choose to customize their own doll using knock-off/replica parts.",
+        "rating": "While many find Blythe dolls creepy, I think they're super cute and endearing, and would particularly like to make a \"mini-me\" blythe doll to display in my room.",
         "ranking_id": 0,
         "categories": [
             "future"
@@ -124,8 +124,8 @@ let trinkets = [
         "year": "N/A",
         "value": "$15.00-$25.00",
         "origin": "N/A",
-        "description":"A taper candle is a long, thin candle, which were formerly most often used to light rooms after nightfall, but are now more commonly used as a form of decorative lighting. Most taper candles are between 10-12 inches, and have a burn time of approx. 10 hours.<br> <strong>Why I want it:</strong> For some reason, I find that when studying or doing homework I focus best when the only lightsource available to me is a taper candle. However, the average taper candle doesn't last long enough to be convenient for my daily needs, and I've (quite literally) been burning through candles since I made this discovery.",
-        "rating": "none",
+        "description":"A taper candle is a long, thin candle, which were formerly most often used to light rooms after nightfall, but are now more commonly used as a form of decorative lighting. Most taper candles are between 10-12 inches, and have a burn time of approx. 10 hours.",
+        "rating": "For some reason, I find that when studying or doing homework I focus best when the only lightsource available to me is a taper candle. However, the average taper candle doesn't last long enough to be convenient for my daily needs, and I've (quite literally) been burning through candles since I made this discovery.",
         "ranking_id": 0,
         "categories": [
             "future"
@@ -140,8 +140,8 @@ let trinkets = [
         "year": "N/A",
         "value": "$15.00-$50.00+",
         "origin": "China",
-        "description":"In Chinese tea ceremonies, tea pets are a decorative ceramic figurine and good luck charm. Since the most tea leaves produce the strongest flavor after their second steeping, it's traditional to pour the tea from your first steep onto your tea pet as an offering of sorts.<br> <strong>Why I want it:</strong> As someone who drinks tea a good bit, I think this would be a fun addition to my tea drinking. Also look at how cute it is!",
-        "rating": "none",
+        "description":"In Chinese tea ceremonies, tea pets are a decorative ceramic figurine and good luck charm. Since the most tea leaves produce the strongest flavor after their second steeping, it's traditional to pour the tea from your first steep onto your tea pet as an offering of sorts.",
+        "rating": "As someone who drinks tea a good bit, I think this would be a fun addition to my tea drinking. Also look at how cute it is!",
         "ranking_id": 0,
         "categories": [
             "future"
