@@ -310,9 +310,9 @@ app.post("/api/trinkets", upload.single("img"), (req, res) => {
   });
 
 app.put("/api/trinkets/:id", upload.single("img"), (req, res) => {
-    let trinket = trinkets.find((h) => t.ranking_id === parseInt(req.params.id));
+    let trinket = trinkets.find((t) => t.ranking_id === parseInt(req.params.id));
   
-    if (!trinket) res.status(400).send("House with given id was not found");
+    if (!trinket) res.status(400).send("Trinket with given id was not found");
   
     const result = validateTrinket(req.body);
   
@@ -327,7 +327,6 @@ app.put("/api/trinkets/:id", upload.single("img"), (req, res) => {
     trinket.origin = req.body.origin;
     trinket.description = req.body.description;
     trinket.rating = req.body.rating;
-    trinket.categories = req.body.categories;
     trinket.extraparam = req.body.extraparam;
   
     if (req.file) {
@@ -351,6 +350,18 @@ app.delete("/api/trinkets/:id", (req, res) => {
     res.send(trinket);
   });
 
+app.delete("/api/trinkets/:id", (req, res) => {
+    const trinket = trinkets.find((t) => t.ranking_id === parseInt(req.params.id));
+  
+    if (!trinket) {
+      res.status(404).send("Trinket not found!");
+    }
+  
+    const index = trinkets.indexOf(trinket);
+    trinkets.splice(index, 1);
+    res.send(trinket);
+});
+
 const validateTrinket = (trinket) => {
     const schema = Joi.object({
       ranking_id: Joi.allow(""),
@@ -359,7 +370,7 @@ const validateTrinket = (trinket) => {
       value: Joi.string().required(),
       origin: Joi.string().required(),
       description: Joi.string().required(),
-      rating: Joi.number().required(),
+      rating: Joi.string().required(),
     });
   
     return schema.validate(trinket);
