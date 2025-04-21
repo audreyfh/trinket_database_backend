@@ -1,9 +1,24 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
+const Joi = require("joi");
+const multer = require("multer");
 app.use(express.static("public"));
+app.use("/uploads", express.static("uploads"));
 app.use(express.json());
 app.use(cors());
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+      cb(null, "./public/images/");
+    },
+    filename: (req, file, cb) => {
+      cb(null, file.originalname);
+    },
+  });
+  
+  const upload = multer({ storage: storage });
+  
 
 app.get("/",(req, res)=>{
     res.sendFile(__dirname+"/index.html");
@@ -247,6 +262,48 @@ let trinkets = [
 app.get("/api/trinkets", (req, res)=>{
     res.send(trinkets);
 });
+
+app.post("/api/trinkets", upload.single("img"), (req, res) => {
+    const result = validateTrinket(req.body);
+  
+    if (result.error) {
+      res.status(400).send(result.error.details[0].message);
+      return;
+    }
+  
+    const trinket = {
+      ranking_id: trinkets.length + 1,
+      name: req.body.name,
+      year: req.body.year,
+      origin: req.body.origin,
+      description: req.body.description,
+      rating: req.body.rating,
+      categories: ["example"],
+      extraparam: "null",
+    };
+  
+    if (req.file) {
+      trinket.imagesquare = "images/" + req.file.filename;
+      trinket.image2by1 = "images/" + req.file.filename;
+      trinket.image5by4 = "images/" + req.file.filename;
+    }
+  
+    trinkets.push(trinket);
+    res.status(200).send(trinket);
+  });
+
+const validateTrinket = (trinket) => {
+    const schema = Joi.object({
+      ranking_id: Joi.allow(""),
+      name: Joi.string().min(3).required(),
+      year: Joi.string().required(),
+      origin: Joi.string().required(),
+      description: Joi.string().required(),
+      rating: Joi.number().required,
+    });
+  
+    return schema.validate(trinket);
+  };
 
 app.listen(3001, ()=>{
     console.log("I'm listening");
