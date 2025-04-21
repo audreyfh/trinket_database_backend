@@ -179,21 +179,6 @@ let trinkets = [
         "extraparam": "null"
     },
     {
-        "name":"Smiski doing Yoga",
-        "imagesquare": "images/smiski.jpg",
-        "image2by1": "null",
-        "image5by4": "images/smiski.jpg",
-        "year": "Unknown",
-        "origin": "Japan",
-        "description": "",
-        "rating": "",
-        "ranking_id": 7,
-        "categories": [
-            "Collectible"
-        ],
-        "extraparam": "null"
-    },
-    {
         "name":"Cat in Shark Costume",
         "imagesquare": "images/catshark.jpg",
         "image2by1": "null",
@@ -252,11 +237,42 @@ let trinkets = [
         "rating": "",
         "ranking_id": 11,
         "categories": [
-            "Misc"
+            "Misc."
+        ],
+        "extraparam": "null"
+    },
+    {
+        "name":"Edit Me!",
+        "imagesquare": "images/editme.png",
+        "image2by1": "null",
+        "image5by4": "null",
+        "year": "2025",
+        "value": "$5.00",
+        "origin": "United States",
+        "description": "Please use this trinket to test edit/delete! It's functionally the same as all of my other trinkets.",
+        "rating": "★★★★☆",
+        "ranking_id": 12,
+        "categories": [
+            "example"
+        ],
+        "extraparam": "null"
+    },
+    {
+        "name":"Delete Me!",
+        "imagesquare": "images/editme.png",
+        "image2by1": "null",
+        "image5by4": "null",
+        "year": "2025",
+        "value": "$5.00",
+        "origin": "United States",
+        "description": "Please use this trinket to test edit/delete! It's functionally the same as all of my other trinkets.",
+        "rating": "★★★★☆",
+        "ranking_id": 13,
+        "categories": [
+            "example"
         ],
         "extraparam": "null"
     }
-    
 ];
 
 app.get("/api/trinkets", (req, res)=>{
@@ -291,6 +307,48 @@ app.post("/api/trinkets", upload.single("img"), (req, res) => {
   
     trinkets.push(trinket);
     res.status(200).send(trinket);
+  });
+
+app.put("/api/trinkets/:id", upload.single("img"), (req, res) => {
+    let trinket = trinkets.find((h) => t.ranking_id === parseInt(req.params.id));
+  
+    if (!trinket) res.status(400).send("House with given id was not found");
+  
+    const result = validateTrinket(req.body);
+  
+    if (result.error) {
+      res.status(400).send(result.error.details[0].message);
+      return;
+    }
+  
+    trinket.name = req.body.name;
+    trinket.year = req.body.year;
+    trinket.value = req.body.value;
+    trinket.origin = req.body.origin;
+    trinket.description = req.body.description;
+    trinket.rating = req.body.rating;
+    trinket.categories = req.body.categories;
+    trinket.extraparam = req.body.extraparam;
+  
+    if (req.file) {
+        trinket.imagesquare = "images/" + req.file.filename;
+        trinket.image2by1 = "images/" + req.file.filename;
+        trinket.image5by4 = "images/" + req.file.filename;
+    }
+  
+    res.send(trinket);
+});
+
+app.delete("/api/trinkets/:id", (req, res) => {
+    const trinket = trinkets.find((h) => h.ranking_id === parseInt(req.params.id));
+  
+    if (!trinket) {
+      res.status(404).send("Trinket not found!");
+    }
+  
+    const index = trinkets.indexOf(trinket);
+    trinkets.splice(index, 1);
+    res.send(trinket);
   });
 
 const validateTrinket = (trinket) => {
