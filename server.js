@@ -275,6 +275,7 @@ app.post("/api/trinkets", upload.single("img"), (req, res) => {
       ranking_id: trinkets.length + 1,
       name: req.body.name,
       year: req.body.year,
+      value: req.body.value,
       origin: req.body.origin,
       description: req.body.description,
       rating: req.body.rating,
@@ -297,9 +298,10 @@ const validateTrinket = (trinket) => {
       ranking_id: Joi.allow(""),
       name: Joi.string().min(3).required(),
       year: Joi.string().required(),
+      value: Joi.string().required(),
       origin: Joi.string().required(),
       description: Joi.string().required(),
-      rating: Joi.number().required,
+      rating: Joi.number().required(),
     });
   
     return schema.validate(trinket);
