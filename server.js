@@ -314,12 +314,12 @@ app.put("/api/trinkets/:id", upload.single("img"), (req, res) => {
   
     if (!trinket) res.status(400).send("Trinket with given id was not found");
   
-    const result = validateTrinket(req.body);
+    //const result = validateTrinket(req.body);
   
-    if (result.error) {
-      res.status(400).send(result.error.details[0].message);
-      return;
-    }
+   // if (result.error) {
+     // res.status(400).send(result.error.details[0].message);
+      //return;
+   // }
   
     trinket.name = req.body.name;
     trinket.year = req.body.year;
