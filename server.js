@@ -35,7 +35,7 @@ let trinkets = [
         "value": "Priceless",
         "origin": "USA",
         "description": "This is one of the ugliest trinkets I own. However, it was given to me by my boyfriend, who spent around 20 minutes making it and told me it was \"me as a rock\". If you squint hard enough, it kind of does look like me a bit (not really). 5 stars for sentimental value." ,
-        "rating": "★★★★★",
+        "rating": "5",
         "ranking_id": 1,
         "categories": [
             "Junk",
@@ -54,7 +54,7 @@ let trinkets = [
         "value": "$22.00",
         "origin": "Indonesia",
         "description":"Despite her young age, Mia Macaron already has an incredibly worldly outlook. Starting in a factory in Indonesia, Mia was shipped to France (possibly stopping in London, her company's homeland)! Here, she patiently sat in Paris's Jellycat Patisserie, until she was eventually picked up and bought by an American tourist, who just happened to be my mother.",
-        "rating": "★★★★☆",
+        "rating": "4",
         "ranking_id": 2,
         "categories": [
             "Cute",
@@ -72,7 +72,7 @@ let trinkets = [
         "value": "$5.50",
         "origin": "Unknown",
         "description":"After hours of slaving away at my computer, I looked to this candle to see it was almost completely finished, and in an incredibly interesting shape to boot. While this is incredibly mundane, looking at it makes me feel like an accomplished worker (and makes me wonder if I have secret candle powers).",
-        "rating": "★★★★☆",
+        "rating": "4",
         "ranking_id": 3,
         "categories": [
             "home",
@@ -91,7 +91,7 @@ let trinkets = [
         "value": "$8.00",
         "origin": "Japan",
         "description":"",
-        "rating": "★★★☆☆",
+        "rating": "3",
         "ranking_id": 4,
         "categories": [
             "home",
@@ -108,7 +108,7 @@ let trinkets = [
         "value": "$16.00",
         "origin": "",
         "description":"",
-        "rating": "",
+        "rating": "4",
         "ranking_id": 5,
         "categories": [
             "Vintage"
@@ -250,7 +250,7 @@ let trinkets = [
         "value": "$5.00",
         "origin": "United States",
         "description": "Please use this trinket to test edit/delete! It's functionally the same as all of my other trinkets.",
-        "rating": "★★★★☆",
+        "rating": "4",
         "ranking_id": 12,
         "categories": [
             "example"
@@ -266,7 +266,7 @@ let trinkets = [
         "value": "$5.00",
         "origin": "United States",
         "description": "Please use this trinket to test edit/delete! It's functionally the same as all of my other trinkets.",
-        "rating": "★★★★☆",
+        "rating": "4",
         "ranking_id": 13,
         "categories": [
             "example"
