@@ -363,6 +363,10 @@ app.delete("/api/trinkets/:id", (req, res) => {
 });
 
 const validateTrinket = (trinket) => {
+    // Parse categories from JSON string if necessary
+    if (typeof trinket.categories === 'string') {
+        trinket.categories = JSON.parse(trinket.categories);
+    }
     const schema = Joi.object({
       ranking_id: Joi.allow(""),
       name: Joi.string().min(3).required(),
@@ -371,6 +375,7 @@ const validateTrinket = (trinket) => {
       origin: Joi.string().required(),
       description: Joi.string().required(),
       rating: Joi.string().required(),
+      categories: Joi.array().items(Joi.string()).required(),  // Ensure categories is an array of strings
     });
   
     return schema.validate(trinket);
