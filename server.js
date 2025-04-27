@@ -295,7 +295,7 @@ app.post("/api/trinkets", upload.single("img"), (req, res) => {
       origin: req.body.origin,
       description: req.body.description,
       rating: req.body.rating,
-      categories: ["example"],
+      categories: req.body.categories,
       extraparam: "null",
     };
   
