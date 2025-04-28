@@ -44,11 +44,6 @@ const trinketSchema = new mongoose.Schema({
 
 const Trinket = mongoose.model("Trinket", trinketSchema);
 
-async function createMessage() {
-  const result = await message.save();
-  console.log(result);
-}
-
 app.get("/",(req, res)=>{
     res.sendFile(__dirname+"/index.html");
 });
