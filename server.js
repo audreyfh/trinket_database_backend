@@ -105,6 +105,8 @@ app.put("/api/trinkets/:id", upload.single("img"), async (req, res) => {
         origin: req.body.origin,
         description: req.body.description,
         rating: req.body.rating,
+        categories: req.body.categories,
+        extraparam: "null",
     };
 
     if (req.file) {
@@ -140,7 +142,7 @@ const validateTrinket = (trinket) => {
       origin: Joi.string().required(),
       description: Joi.string().required(),
       rating: Joi.string().required(),
-      categories: Joi.array().items(Joi.string()),  // Ensure categories is an array of strings
+      categories: Joi.array().items(Joi.string()).required(),  // Ensure categories is an array of strings
     });
   
     return schema.validate(trinket);
