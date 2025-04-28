@@ -1,12 +1,12 @@
-//const express = require("express");
-//const cors = require("cors");
-//const app = express();
-//const Joi = require("joi");
-//const multer = require("multer");
-//app.use(express.static("public"));
-//app.use("/uploads", express.static("uploads"));
-//app.use(express.json());
-//app.use(cors());
+const express = require("express");
+const cors = require("cors");
+const app = express();
+const Joi = require("joi");
+const multer = require("multer");
+app.use(express.static("public"));
+app.use("/uploads", express.static("uploads"));
+app.use(express.json());
+app.use(cors());
 const mongoose = require("mongoose");
 
 //testdb is name of database, it will automatically make it
@@ -31,3 +31,7 @@ const message = new Message({
 });
 
 createMessage();
+
+app.listen(3001, ()=>{
+    console.log("I'm listening");
+});
