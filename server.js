@@ -105,8 +105,6 @@ app.put("/api/trinkets/:id", upload.single("img"), async (req, res) => {
         origin: req.body.origin,
         description: req.body.description,
         rating: req.body.rating,
-        categories: req.body.categories,
-        extraparam: "null",
     };
 
     if (req.file) {
