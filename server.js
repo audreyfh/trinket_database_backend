@@ -94,10 +94,7 @@ app.put("/api/trinkets/:id", upload.single("img"), async (req, res) => {
         res.status(400).send(result.error.details[0].message);
         return;
     }
-    let trinket = trinkets.find((t) => t.ranking_id === parseInt(req.params.id));
-  
-    if (!trinket) res.status(400).send("Trinket with given id was not found");
-  
+    
     let fieldsToUpdate = {
         name: req.body.name,
         year: req.body.year,
