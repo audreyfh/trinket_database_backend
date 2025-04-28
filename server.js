@@ -140,7 +140,7 @@ const validateTrinket = (trinket) => {
       origin: Joi.string().required(),
       description: Joi.string().required(),
       rating: Joi.string().required(),
-      categories: Joi.array().items(Joi.string()).required(),  // Ensure categories is an array of strings
+      categories: Joi.array().items(Joi.string()),  // Ensure categories is an array of strings
     });
   
     return schema.validate(trinket);
